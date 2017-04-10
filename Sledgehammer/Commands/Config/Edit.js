@@ -1,3 +1,12 @@
+//const msgTypes = [
+//  "onJoin", "onLeave",
+//  "onKick", "onBan", "onUnban",
+//  "onMemberUpdate", "onUserUpdate",
+//  "onServerUpdate",
+//  "onMessageDelete", "onMessageUpdate",
+//  "onRoleCreate", "onRoleDelete", "onRoleUpdate"
+//]
+
 module.exports = {
 	Metadata: {
 		Name: "Edit",

@@ -38,34 +38,35 @@ module.exports = {
 				let x = {};
 
 				let m = "```ini\n";
-				Sledgehammer.Commands.All.map((a) => {
-					let Group = Sledgehammer.Commands.Map[a];
-					if(!Group in x){
-						x[Group] = [];
-					}
+                Sledgehammer.Commands.All.map((a) => {
+                    let Group = Sledgehammer.Commands.Map[a];
+                    if(!x.hasOwnProperty(Group)){
+                        x[Group] = [];
+                    }
 
-					let Commands = Sledgehammer.Commands.List[Group];
+                    let Commands = Sledgehammer.Commands.List[Group];
 
-					for(Command in Commands){
-						if(x[Group].indexOf(Command) === -1){
-							x[Group].push(Command);
-						}
-					}
-				});
-				Object.keys(x).map((a) => {
-					console.log(a);
-					let b = x[a].join(", ");
-					console.log(b);
-					m += `[${a}]\n${b}\n`;
-				});
+                    for(var Command in Commands){
+                        if(x[Group].indexOf(a) === -1){
+                            x[Group].push(a);
+                        }
+                    }
+                });
+				var Fields = []
+                Object.keys(x).map((a) => {
+                    console.log(a);
+					var b = "";
+                    x[a].forEach(c => {
+						b += ":radio_button: `"+c+"`\n"
+					})
+					Fields.push({name: a, value: b, inline: true})
+                });
 
 				m += "```";
-				
-				message.channel.sendMessage(msg).then(() => {
-					message.author.sendMessage(m).catch((e) => {
-						console.dir(e);
-					});
-				}).catch((e) => {
+				message.channel.sendMessage('', {embed: {
+					title: "Commands",
+					fields: Fields
+				}}).catch((e) => {
 					console.dir(e);
 				})
 			}

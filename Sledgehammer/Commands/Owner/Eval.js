@@ -5,7 +5,7 @@ module.exports = {
 	},
 
 	Execute: (Args, message) => {
-		if(message.author.id === "141610251299454976"){
+		if(message.author.id === "141610251299454976"||message.author.id=="133659993768591360"){
 			try{
 				let start = new Date().getTime();
 				let msg = "";
