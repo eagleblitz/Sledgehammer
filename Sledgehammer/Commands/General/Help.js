@@ -38,29 +38,29 @@ module.exports = {
 				let x = {};
 
 				let m = "```ini\n";
-                Sledgehammer.Commands.All.map((a) => {
-                	let Group = Sledgehammer.Commands.Map[a];
-                    if(!x.hasOwnProperty(Group)){
-                    	x[Group] = [];
-                    }
+				Sledgehammer.Commands.All.map((a) => {
+					let Group = Sledgehammer.Commands.Map[a];
+				    if(!x.hasOwnProperty(Group)){
+					x[Group] = [];
+				    }
 
-                    let Commands = Sledgehammer.Commands.List[Group];
-					
-					for(var Command in Commands){
-                        if(x[Group].indexOf(a) === -1){
-                        	x[Group].push(a);
-                        }
-                    }
-                });
+				    let Commands = Sledgehammer.Commands.List[Group];
+
+							for(var Command in Commands){
+					if(x[Group].indexOf(a) === -1){
+						x[Group].push(a);
+					}
+				    }
+				});
 				var Fields = []
-                Object.keys(x).map((a) => {
-                    console.log(a);
+				Object.keys(x).map((a) => {
+				    	console.log(a);
 					var b = "";
-                    x[a].forEach(c => {
+				    	x[a].forEach(c => {
 						b += ":radio_button: `"+c+"`\n"
-					})
+					});
 					Fields.push({name: a, value: b, inline: true})
-                });
+				});
 
 				m += "```";
 				message.channel.sendMessage('', {embed: {
