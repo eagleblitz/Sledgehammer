@@ -31,14 +31,14 @@ ____
 
 - Logging
   - Channel For Logs In PM registration
-      - Log All Mod Activities
+      - Log All Mod Activities *and maybe reasons*
       - Log All Joins/Leaves
       - Log All Voice Channel Join/Leaves
       - Log All Message Deletion
       - Log All Commands Usage
   - Options to turn individual things on or off in different channels or same channel
 
-- Moderator Abilities*
+- Moderator Abilities
   - Basic
       - Mute Timer
       - Softban (ban/unban)
@@ -50,7 +50,17 @@ ____
       - ???
 
 - Web Dashboard
-  - ???
+  - Basic UI
+  - Backend support through database
+  - Load and Configure settings for server
+    - Mute Role
+    - Log Channel
+    - Log States
+    - View Logs for server
+    - Edit ACL config
+    - Edit link filter for each channel
+  - If changes are detected whilst user is on site, inform user on current session
+  - Edit custom commands *if added*
 
 - Private Message Recognition
   - Base Permissions
