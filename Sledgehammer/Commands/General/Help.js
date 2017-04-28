@@ -39,16 +39,16 @@ module.exports = {
 
 				let m = "```ini\n";
                 Sledgehammer.Commands.All.map((a) => {
-                    let Group = Sledgehammer.Commands.Map[a];
+                	let Group = Sledgehammer.Commands.Map[a];
                     if(!x.hasOwnProperty(Group)){
-                        x[Group] = [];
+                    	x[Group] = [];
                     }
 
                     let Commands = Sledgehammer.Commands.List[Group];
-
-                    for(var Command in Commands){
+					
+					for(var Command in Commands){
                         if(x[Group].indexOf(a) === -1){
-                            x[Group].push(a);
+                        	x[Group].push(a);
                         }
                     }
                 });
