@@ -50,6 +50,10 @@ ____
       - ???
 
 - Web Dashboard
+  - OAuth Login
+    - Check for Admin Permission on all servers...
+      - Sledgehammer has Admin
+      - The user had Admin
   - Basic UI
   - Backend support through database
   - Load and Configure settings for server
